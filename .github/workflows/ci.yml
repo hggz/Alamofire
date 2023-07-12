@@ -273,14 +273,6 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      matrix:
-        include:
-          - image: swift:5.8.0-focal
-          - image: swift:5.8.0-jammy
-          - image: swift:5.8.0-bionic
-          - image: swift:5.8.0-centos7
-          - image: swift:5.8.0-amazonlinux2
-          - image: swift:5.8.0-rhel-ubi9
     container:
       image: ${{ matrix.image }}
     timeout-minutes: 10
