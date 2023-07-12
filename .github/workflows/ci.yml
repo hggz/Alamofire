@@ -278,7 +278,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Setup
-        uses: Swift-Commons/swift-android-sdk@ci2
+        uses: Swift-Commons/swift-android-sdk/.github/workflows/sdks.yml@ci2
       - name: Clone
         uses: actions/checkout@v3
       - name: ${{ matrix.image }}
