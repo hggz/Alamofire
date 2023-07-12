@@ -285,6 +285,7 @@ jobs:
       image: ${{ matrix.image }}
     timeout-minutes: 10
     steps:
+        uses: actions/checkout@v3
       - name: Setup
         uses: finagolfin/swift-android-sdk@main
       - name: Clone
