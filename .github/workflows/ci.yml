@@ -273,9 +273,6 @@ jobs:
     uses: Swift-Commons/swift-android-sdk/.github/workflows/sdks.yml@ci2
     strategy:
       fail-fast: false
-    container:
-      image: ${{ matrix.image }}
-    timeout-minutes: 10
     with:
       checkout-hash: "0000"
   # Windows:
