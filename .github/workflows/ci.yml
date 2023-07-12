@@ -271,19 +271,13 @@ jobs:
   Android:
     name: Android
     uses: Swift-Commons/swift-android-sdk/.github/workflows/sdks.yml@ci2
-    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
     container:
       image: ${{ matrix.image }}
     timeout-minutes: 10
-    steps:
-      # - name: Setup
-        # uses: Swift-Commons/swift-android-sdk/.github/workflows/sdks.yml@ci2
-      - name: Clone
-        uses: actions/checkout@v3
-      - name: ${{ matrix.image }}
-        run: ../sdk-config/swift-5.8-ubuntu22.04/usr/bin/swift build --build-tests --destination ../sdk-config/swift-release-*-sdk/usr/swiftpm-android-aarch64.json -Xlinker -rpath -Xlinker \$ORIGIN/lib/swift/android
+    with:
+      checkout-hash: 000
   # Windows:
   #   name: Windows
   #   runs-on: windows-latest
