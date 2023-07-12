@@ -277,7 +277,7 @@ jobs:
       image: ${{ matrix.image }}
     timeout-minutes: 10
     with:
-      checkout-hash: 000
+      checkout-hash: "0000"
   # Windows:
   #   name: Windows
   #   runs-on: windows-latest
