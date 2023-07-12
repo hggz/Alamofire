@@ -3,6 +3,7 @@ name: "Alamofire CI"
 on:
   push:
     branches:
+      - ci
       - master
       - hotfix
     paths:
