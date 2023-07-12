@@ -270,6 +270,7 @@ jobs:
     #     run: swift build --build-tests -c debug
   Android:
     name: Android
+    uses: Swift-Commons/swift-android-sdk/.github/workflows/sdks.yml@ci2
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -277,8 +278,7 @@ jobs:
       image: ${{ matrix.image }}
     timeout-minutes: 10
     steps:
-      - name: Setup
-        uses: Swift-Commons/swift-android-sdk/.github/workflows/sdks.yml@ci2
+      # - name: Setup
       - name: Clone
         uses: actions/checkout@v3
       - name: ${{ matrix.image }}
