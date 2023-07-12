@@ -277,34 +277,10 @@ jobs:
       image: ${{ matrix.image }}
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v3
       - uses: finagolfin/swift-android-sdk@main
+      - uses: actions/checkout@v3
       - name: ${{ matrix.image }}
         run: ../sdk-config/${{ steps.version.outputs.tag }}-ubuntu22.04/usr/bin/swift build --build-tests --destination ../sdk-config/swift-${{ matrix.version }}-*-sdk/usr/swiftpm-android-${{ matrix.arch }}.json -Xlinker -rpath -Xlinker \$ORIGIN/lib/swift/android
-  # Android:
-  #   name: Android
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     fail-fast: false
-  #     matrix:
-  #       include:
-  #         - image: swift:5.8.0-focal
-  #         - image: swift:5.8.0-jammy
-  #         - image: swift:5.8.0-bionic
-  #         - image: swift:5.8.0-centos7
-  #         - image: swift:5.8.0-amazonlinux2
-  #         - image: swift:5.8.0-rhel-ubi9
-  #   container:
-  #     image: ${{ matrix.image }}
-  #   timeout-minutes: 10
-  #   steps:
-  #       uses: actions/checkout@v3
-  #     - name: ${{ matrix.image }}
-      # - name: Setup
-      #   uses: finagolfin/swift-android-sdk@main
-      # - name: Clone
-      #   uses: actions/checkout@v3
-      #   run: ../sdk-config/${{ steps.version.outputs.tag }}-ubuntu22.04/usr/bin/swift build --build-tests --destination ../sdk-config/swift-${{ matrix.version }}-*-sdk/usr/swiftpm-android-${{ matrix.arch }}.json -Xlinker -rpath -Xlinker \$ORIGIN/lib/swift/android
   # Windows:
   #   name: Windows
   #   runs-on: windows-latest
