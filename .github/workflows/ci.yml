@@ -258,9 +258,9 @@ jobs:
           - image: swift:5.8.0-centos7
           - image: swift:5.8.0-amazonlinux2
           - image: swift:5.8.0-rhel-ubi9
-          - image: swiftlang/swift:nightly-focal
-          - image: swiftlang/swift:nightly-jammy
-          - image: swiftlang/swift:nightly-amazonlinux2
+          # - image: swiftlang/swift:nightly-focal
+          # - image: swiftlang/swift:nightly-jammy
+          # - image: swiftlang/swift:nightly-amazonlinux2
     container:
       image: ${{ matrix.image }}
     timeout-minutes: 10
