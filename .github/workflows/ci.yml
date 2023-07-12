@@ -274,7 +274,8 @@ jobs:
     strategy:
       fail-fast: false
     with:
-      checkout-hash: "0000"
+      target-repo: ${{ github.repository }}
+      checkout-hash: ${{ github.sha }}
   # Windows:
   #   name: Windows
   #   runs-on: windows-latest
