@@ -269,7 +269,7 @@ jobs:
     #   - name: ${{ matrix.image }}
     #     run: swift build --build-tests -c debug
   Android:
-    name: Android5
+    name: Android6
     uses: Swift-Commons/swift-android-sdk/.github/workflows/sdks.yml@ci2
     strategy:
       fail-fast: false
