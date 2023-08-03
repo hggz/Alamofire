@@ -269,7 +269,7 @@ jobs:
     #   - name: ${{ matrix.image }}
     #     run: swift build --build-tests -c debug
   Android:
-    name: Android9
+    name: Android10
     uses: hggz/swift-android-sdk/.github/workflows/sdks.yml@ci
     strategy:
       fail-fast: false
